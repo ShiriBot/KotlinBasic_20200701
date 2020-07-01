@@ -55,7 +55,23 @@ class MainActivity : AppCompatActivity() {
 
 //            10은 정수. 정수를 num1에 대입 => num1은 Int로 결정.
 //            val num1 = 10
+        }
 
+        ageBtn.setOnClickListener {
+//            입력한 나이를 Int로 저장하자.
+            val inputAge = ageEdt.text.toString().toInt()
+//            나이가 60살 이상이면 어르신입ㄴ디ㅏ 출력
+            if ( inputAge >=60){
+                Toast.makeText(this,"어르신입니다",Toast.LENGTH_SHORT).show()
+            }
+//            입력된 나이값에 따라 다른 처리 when
+            when(inputAge){
+                in 10..19 -> Toast.makeText(this,"미성년입니다",Toast.LENGTH_SHORT).show()
+                20 -> {Toast.makeText(this,"스무살이다.",Toast.LENGTH_SHORT).show()}
+                27,27 ->{Toast.makeText(this,"스무살이다.",Toast.LENGTH_SHORT).show()}
+                30 -> {Toast.makeText(this,"나랑 동갑이다.",Toast.LENGTH_SHORT).show()}
+                else -> {Toast.makeText(this,"아무 해당사항 없는 나이",Toast.LENGTH_SHORT).show()}
+            }
 
 
         }
